@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#ffcfd8dc"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:textAppearance="?android:textAppearanceMedium"
+        android:id="@+id/empty_title_text"
+        android:paddingTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        tools:text="Nothing to show"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ListView android:id="@+id/song_list"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:backgroundTint="@android:color/white"
+            android:layout_width="fill_parent"
+            android:layout_height="24dp"
+            android:layout_above="@+id/song_name" />
+
+        <TextView
+            android:textColor="@android:color/white"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:id="@id/song_name"
+            android:background="?colorPrimary"
+            android:fadingEdge="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:layout_above="@id/toolbar"
+            android:marqueeRepeatLimit="marquee_forever" />
+
+        <RelativeLayout
+            android:gravity="center"
+            android:id="@+id/button_panel"
+            android:layout_width="fill_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:background="?colorPrimary"
+                android:layout_width="fill_parent"
+                android:layout_height="70dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:layout_scrollFlags="enterAlways|scroll" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/playPause"
+                android:backgroundTint="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                app:fabSize="normal" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fast_forward"
+                android:layout_width="wrap_content"
+                android:backgroundTint="@android:color/white"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="36dp"
+                android:src="@drawable/ic_action_fast_forward"
+                android:layout_toRightOf="@id/playPause"
+                app:fabSize="mini" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:backgroundTint="@android:color/white"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_action_next"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                app:fabSize="mini" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/rewind"
+                android:backgroundTint="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="36dp"
+                android:src="@drawable/ic_action_rewind"
+                android:layout_toLeftOf="@id/playPause"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                app:fabSize="mini" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/previous"
+                android:backgroundTint="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:src="@drawable/ic_action_previous"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                app:fabSize="mini" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+

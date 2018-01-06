@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Music</string>
+    <string name="nothing_to_show">No songs to show..</string>
+</resources>
